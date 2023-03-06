@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "dbc3a044-44f7-48c2-8456-2255cddba175",
+		"name": "ADESA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24532137"
+	},
+	"item": [
+		{
+			"name": "car-makes",
+			"item": [
+				{
+					"name": "car-make-lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/carmakes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carmakes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/carmakes/2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carmakes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store car-make",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Toyota",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/carmakes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carmakes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search car-makes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filter_name",
+									"value": "c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/search/carmakes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"search",
+								"carmakes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "car-models",
+			"item": [
+				{
+					"name": "car-model-lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/carmodels",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carmodels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store car-model",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car_make_id",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "C-HR",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/carmodels",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carmodels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search car-models",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filter_name",
+									"value": "s",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/search/carmodels",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"search",
+								"carmodels"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "car-lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/cars?make=bmw&model=&fuel_type=&auction_source=All Sources&transmission=",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							],
+							"query": [
+								{
+									"key": "make",
+									"value": "bmw"
+								},
+								{
+									"key": "model",
+									"value": ""
+								},
+								{
+									"key": "fuel_type",
+									"value": ""
+								},
+								{
+									"key": "auction_source",
+									"value": "All Sources"
+								},
+								{
+									"key": "transmission",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store-cars",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/cars?name=Orlando 2.0&car_make_id=2&car_model_id=10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cars"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Orlando 2.0"
+								},
+								{
+									"key": "car_make_id",
+									"value": "2"
+								},
+								{
+									"key": "car_model_id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fuel-types",
+			"item": [
+				{
+					"name": "store fuel-type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Petrol",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/fueltypes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fueltypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fuel-type-lists",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Petrol",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.12:8080/api/fueltypes",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"12"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fueltypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
