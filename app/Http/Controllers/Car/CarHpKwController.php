@@ -3,23 +3,18 @@
 namespace App\Http\Controllers\Car;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Car\FuelTypeRequest;
-use App\Models\FuelType;
+use App\Http\Requests\Car\HpKwRequest;
+use App\Models\HpKw;
 use Illuminate\Http\Request;
 
-class FuelTypeController extends Controller
+class CarHpKwController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $fuel_types = FuelType::orderBy('id','asc')->get();
-        return response()->json([
-            "error"=>false,
-            "message"=>"Car Fuel Type Lists",
-            "data"=>$fuel_types
-            ]);
+        //
     }
 
     /**
@@ -33,21 +28,22 @@ class FuelTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(FuelTypeRequest $request)
+    public function store(HpKwRequest $request)
     {
         $validator = $request->validated();
-        $fuel_type = FuelType::create($validator);
+        return $validator;
+        $car = HpKw::create($validator);
         return response()->json([
-            "error"=>false,
-            "message"=>"Car Fuel Type Created",
-            "data"=>$fuel_type
-            ]);
+            "error" => false,
+            "message" => "Car-Make Created",
+            "data" => $car
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(FuelType $fuelType)
+    public function show(HpKw $hpKw)
     {
         //
     }
@@ -55,7 +51,7 @@ class FuelTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(FuelType $fuelType)
+    public function edit(HpKw $hpKw)
     {
         //
     }
@@ -63,7 +59,7 @@ class FuelTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FuelType $fuelType)
+    public function update(Request $request, HpKw $hpKw)
     {
         //
     }
@@ -71,7 +67,7 @@ class FuelTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FuelType $fuelType)
+    public function destroy(HpKw $hpKw)
     {
         //
     }

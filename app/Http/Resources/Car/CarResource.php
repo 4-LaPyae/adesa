@@ -20,7 +20,12 @@ class CarResource extends JsonResource
             "make_name"=>$this->make_name,
             "model_name"=>$this->model_name,
             "transmission"=>$this->transmission,
-            "fuel_type"=>$this->fuel_type_name
+            "fuel_type"=>$this->fuel_type_name,
+            "body_type"=>$this->body_type_name,
+            "equipment"=>$this->equipment_name,
+            "colour"=>$this->colour_name,
+            "power_hp"=>$this->hp_value.'hp',
+            "power_kw"=>$this->kw_value.'kw'
         ];
     }
 }

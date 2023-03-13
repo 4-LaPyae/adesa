@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUploadController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -57,10 +58,12 @@ Route::get('/', function () {
     //         ->orderBy('id','desc')
     //         ->get();
     #select id,name from cars where id BETWEEN 1 and 3 orderBy id desc;
-    $cars = DB::table('cars')
-            ->select('id','name')
-            ->whereNotBetween('id',[1,4])
-            ->orderBy('id','desc')
-            ->get();
-   return $cars;
+//     $cars = DB::table('cars')
+//             ->select('id','name')
+//             ->whereNotBetween('id',[1,4])
+//             ->orderBy('id','desc')
+//             ->get();
+//    return $cars;
 });
+
+Route::resource('file-upload',FileUploadController::class);

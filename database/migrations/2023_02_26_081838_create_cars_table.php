@@ -19,6 +19,12 @@ return new class extends Migration
             $table->unsignedBigInteger('fuel_type_id')->nullable();
             $table->unsignedBigInteger('auction_source')->default(1);
             $table->string('transmission')->nullable();
+            $table->unsignedBigInteger('body_type_id')->nullable();
+            $table->string('mileage')->nullable();
+            $table->unsignedBigInteger('equipment_id')->nullable();
+            $table->unsignedBigInteger('colour_id');
+            $table->string('power_hp')->nullable();
+            $table->string('power_kw')->nullable();
             $table->timestamps();
         });
     }
