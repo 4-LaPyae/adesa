@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory,FillableTraits;
-    //protected $with = ['make','model'];
     public function make(){
         return $this->belongsTo(CarMake::class,'car_make_id','id');
     }

@@ -7,3 +7,11 @@
     }
     return $arr1;
 }
+
+function engineObjToArr($arr){
+    $arr2=[];
+    foreach($arr as $a){
+        array_push($arr2,$a->value . 'cc');
+    }
+    return $arr2;
+}

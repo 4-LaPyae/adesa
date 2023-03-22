@@ -22,9 +22,20 @@ return new class extends Migration
             $table->unsignedBigInteger('body_type_id')->nullable();
             $table->string('mileage')->nullable();
             $table->unsignedBigInteger('equipment_id')->nullable();
-            $table->unsignedBigInteger('colour_id');
+            $table->string('colour');
             $table->string('power_hp')->nullable();
             $table->string('power_kw')->nullable();
+            $table->string('co2_emission')->nullable();
+            $table->unsignedBigInteger('damage_id');
+            $table->string('emission_standard')->nullable();
+            $table->unsignedBigInteger('auction_type_id')->nullable();
+            $table->unsignedBigInteger('seller_id')->nullable();
+            $table->tinyInteger('x-time')->default(1);
+            $table->tinyInteger('vat-regime')->default(1);
+            $table->string('first_registration')->nullable();
+            $table->string('engine_size')->nullable();
+            $table->string('price');
+            $table->unsignedBigInteger('media_id')->nullable();
             $table->timestamps();
         });
     }
